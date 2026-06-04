@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "akari-memo",
+    "title": "灯り帖",
+    "category": "アプリ",
+    "summary": "良かったことを、あとで振り返る為のアプリ",
+    "description": "慌ただしい日にも、心に残ったことをそっと書き留めるためのアプリです。",
+    "tags": ["記録", "振り返り"],
+    "featuredOrder": 2,
+    "detailPath": "works/akari-memo/",
+    "thumbnailPath": "images/works/akari-memo.webp",
+    "thumbnailAlt": "灯り帖のタイトルと灯りを描いた紺色のイメージ画像",
+    "launch": {
+      "type": "pending",
+      "service": null,
+      "url": null,
+      "label": "準備中"
+    }
+  },
+  {
+    "slug": "mitsuba-memo",
+    "title": "みつばメモ",
+    "category": "アプリ",
+    "summary": "ADHD特化型メモアプリ。",
+    "description": "思考やタスクをやさしく整理して、いま取り組みたい一歩を見つけるためのアプリです。",
+    "tags": ["メモ", "習慣化"],
+    "featuredOrder": 1,
+    "detailPath": "works/mitsuba-memo/",
+    "thumbnailPath": "images/works/mitsuba-memo.webp",
+    "thumbnailAlt": "四つ葉とメモを描いたみつばメモのイメージ画像",
+    "launch": {
+      "type": "pending",
+      "service": null,
+      "url": null,
+      "label": "準備中"
+    }
+  },
+  {
+    "slug": "nyussion",
+    "title": "Nyussion",
+    "category": "アプリ",
+    "summary": "文字での会話を楽にするアプリ",
+    "description": "大切なことを思い出しやすくして、日々のコミュニケーションを支えるためのアプリです。",
+    "tags": ["通知", "コミュニケーション"],
+    "featuredOrder": null,
+    "detailPath": "works/nyussion/",
+    "thumbnailPath": "images/works/nyussion.webp",
+    "thumbnailAlt": "スマートフォンを見る猫耳の女の子を描いたNyussionのイメージ画像",
+    "launch": {
+      "type": "pending",
+      "service": null,
+      "url": null,
+      "label": "準備中"
+    }
+  },
+  {
+    "slug": "doomscrolling-stopper",
+    "title": "反芻ストッパー",
+    "category": "アプリ",
+    "summary": "グルグル思考を、言葉にして手放すアプリ",
+    "description": "考えが止まらないときに、気持ちを書き出して少し距離を置くためのシンプルなアプリです。",
+    "tags": ["セルフケア", "気持ちの整理"],
+    "featuredOrder": null,
+    "detailPath": "works/doomscrolling-stopper/",
+    "thumbnailPath": "images/works/doomscrolling-stopper.webp",
+    "thumbnailAlt": "机に向かう猫耳の女の子を描いた反芻ストッパーのイメージ画像",
+    "launch": {
+      "type": "pending",
+      "service": null,
+      "url": null,
+      "label": "準備中"
+    }
+  },
+  {
+    "slug": "maigo-center",
+    "title": "迷子支援センター",
+    "category": "アプリ",
+    "summary": "寄り道したい日の、行き先を決めるアプリ",
+    "description": "どこかへ出かけたいけれど行き先に迷うとき、思いがけない寄り道先との出会いを手伝うアプリです。",
+    "tags": ["寄り道", "偶然との出会い"],
+    "featuredOrder": 3,
+    "detailPath": "works/maigo-center/",
+    "thumbnailPath": "images/works/maigo-center.webp",
+    "thumbnailAlt": "寄り道先を考える猫店主を描いた迷子支援センターのイメージ画像",
+    "launch": {
+      "type": "pending",
+      "service": null,
+      "url": null,
+      "label": "準備中"
+    }
+  },
+  {
+    "slug": "kuragechan",
+    "title": "泳げ！ぼっちくらげちゃん",
+    "category": "ゲーム",
+    "summary": "ぼっちのくらげちゃんが泳ぐ、Unity製ゲーム",
+    "description": "くらげちゃんと一緒に水の中を進む、Unityroomで公開中のゲームです。",
+    "tags": ["ゲーム", "Unity"],
+    "featuredOrder": null,
+    "detailPath": "works/kuragechan/",
+    "thumbnailPath": "images/works/kuragechan.webp",
+    "thumbnailAlt": "泳げ！ぼっちくらげちゃんのゲームタイトル画面",
+    "launch": {
+      "type": "external",
+      "service": "Unityroom",
+      "url": "https://unityroom.com/games/kuragechan",
+      "label": "Unityroomで遊ぶ"
+    }
+  }
+]

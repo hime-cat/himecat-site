@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>himecat | 小さな工夫で、少し生きやすく。</title>
+    <meta name="description" content="himecatが制作したアプリやゲームをまとめた、小さな作品館です。">
+    <meta property="og:title" content="himecat | 小さな工夫で、少し生きやすく。">
+    <meta property="og:description" content="himecatが制作したアプリやゲームをまとめた、小さな作品館です。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./images/ogp/site.png">
+    <meta property="og:image:width" content="1731">
+    <meta property="og:image:height" content="909">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- TODO: 公開URL決定後に og:url を追加し、og:image を絶対URLへ変更する -->
+    <link rel="icon" type="image/webp" href="./images/decor/paw.webp">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/main.js" defer></script>
+  </head>
+  <body data-site-root="./">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="./" aria-label="himecat ホーム">
+          <img src="./images/himecat-title.webp" alt="himecat">
+        </a>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>
+          Menu
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション" data-menu>
+          <ul>
+            <li><a href="./" aria-current="page">Home</a></li>
+            <li><a href="./works/">Works</a></li>
+            <li><a href="./about/">About</a></li>
+            <li><a href="./links/">Links</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero hero--home">
+        <img class="hero__backdrop" src="./images/hero/home.webp" alt="" fetchpriority="high">
+        <div class="hero__content">
+          <p class="eyebrow">Welcome to himecat's works</p>
+          <h1>小さな工夫で、<br>少し生きやすく。</h1>
+          <p class="lead">
+            ちょっとでも楽しくなるように<br>
+            アプリやゲームを作っています。
+          </p>
+          <div class="button-row">
+            <a class="button" href="./works/">作品を見る <span aria-hidden="true">→</span></a>
+            <a class="button button--secondary" href="./about/">himecatについて</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--soft section--decor">
+        <img class="decor decor--pickup-leaf" src="./images/decor/leaf.webp" alt="" aria-hidden="true">
+        <img class="decor decor--pickup-sparkle" src="./images/decor/sparkle.webp" alt="" aria-hidden="true">
+        <div class="section-inner">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Pick Up Works</p>
+              <h2>代表作品</h2>
+            </div>
+            <p>気になる作品から、ゆっくり見ていってください。</p>
+          </div>
+          <div class="works-grid" data-works-list="featured">
+            <p class="notice">作品一覧を読み込んでいます。</p>
+          </div>
+          <div class="button-row">
+            <a class="button button--secondary" href="./works/">すべての作品を見る <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--decor">
+        <img class="decor decor--features-clover" src="./images/decor/clover.webp" alt="" aria-hidden="true">
+        <img class="decor decor--features-paw" src="./images/decor/paw.webp" alt="" aria-hidden="true">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">What I Make</p>
+            <h2>制作しているもの</h2>
+          </div>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card activity-card">
+            <img class="activity-card__icon" src="./images/about/activity-app.webp" alt="" aria-hidden="true">
+            <h3>アプリ制作</h3>
+            <p>考えを整えたり、毎日の小さな負担を軽くしたり。使う人の歩幅に合う道具を目指します。</p>
+          </article>
+          <article class="feature-card activity-card">
+            <img class="activity-card__icon" src="./images/about/activity-game.webp" alt="" aria-hidden="true">
+            <h3>ゲーム制作</h3>
+            <p>短い時間でも、少し違う場所へ行けるような体験を形にします。</p>
+          </article>
+          <article class="feature-card activity-card">
+            <img class="activity-card__icon" src="./images/about/activity-design-ui.webp" alt="" aria-hidden="true">
+            <h3>デザイン・UI</h3>
+            <p>見やすく、迷いにくい。やさしい使い心地を大切にします。</p>
+          </article>
+          <article class="feature-card activity-card">
+            <img class="activity-card__icon" src="./images/about/activity-idea.webp" alt="" aria-hidden="true">
+            <h3>アイデアを形に</h3>
+            <p>日常で見つけた小さな気づきを、少しずつ作品にします。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="welcome welcome--decor">
+          <img class="welcome__character" src="./images/home/about-himecat.webp" alt="">
+          <img class="decor decor--welcome-coffee" src="./images/decor/coffee.webp" alt="" aria-hidden="true">
+          <div>
+            <p class="eyebrow">About himecat</p>
+            <h2>ようこそ、himecatへ。</h2>
+            <p class="lead">少しでも「助かる」と感じてもらえるものを、これからも作っていきます。</p>
+            <a class="button button--secondary" href="./about/">もっと詳しく<span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="footer-credit"><img src="./images/decor/cat-mark.webp" alt="" aria-hidden="true">&copy; himecat</p>
+        <ul class="footer-links">
+          <li><a href="https://x.com/_himecat" target="_blank" rel="noopener noreferrer">X</a></li>
+          <li><a href="https://www.instagram.com/hime_c4t" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

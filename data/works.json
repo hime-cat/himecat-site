@@ -29,10 +29,10 @@
     "thumbnailPath": "images/works/mitsuba-memo.webp",
     "thumbnailAlt": "四つ葉とメモを描いたみつばメモのイメージ画像",
     "launch": {
-      "type": "pending",
+      "type": "internal",
       "service": null,
-      "url": null,
-      "label": "準備中"
+      "url": "works/mitsuba-memo/app/",
+      "label": "使ってみる"
     }
   },
   {

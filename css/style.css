@@ -296,7 +296,7 @@ a:hover {
   top: 38px;
   right: max(18px, calc(50% - 646px));
   width: 82px;
-  opacity: 0.56;
+  opacity: 0.68;
 }
 
 .decor--features-clover {
@@ -336,7 +336,7 @@ a:hover {
   top: 34px;
   left: -54px;
   width: 68px;
-  opacity: 0.56;
+  opacity: 0.7;
 }
 
 .decor--hero-clover {
@@ -390,7 +390,7 @@ a:hover {
   bottom: 24px;
   left: -58px;
   width: 88px;
-  opacity: 0.24;
+  opacity: 0.42;
 }
 
 .decor--detail-lantern {
@@ -412,7 +412,7 @@ a:hover {
   top: 32px;
   right: -42px;
   width: 78px;
-  opacity: 0.56;
+  opacity: 0.68;
 }
 
 .decor--detail-leaf {
@@ -899,7 +899,7 @@ a:hover {
   top: 22px;
   right: 18px;
   width: 66px;
-  opacity: 0.44;
+  opacity: 0.62;
 }
 
 .link-list {

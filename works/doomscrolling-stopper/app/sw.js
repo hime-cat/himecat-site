@@ -6,7 +6,8 @@ const APP_SHELL = [
   "./css/reset.css",
   "./css/style.css",
   "./js/app.js",
-  "./assets/stopper-signal.svg"
+  "./images/stopper-signal.svg",
+  "./images/ogp.png"
 ];
 
 self.addEventListener("install", (event) => {

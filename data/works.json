@@ -47,10 +47,10 @@
     "thumbnailPath": "images/works/nyussion.webp",
     "thumbnailAlt": "スマートフォンを見る猫耳の女の子を描いたNyussionのイメージ画像",
     "launch": {
-      "type": "pending",
+      "type": "internal",
       "service": null,
-      "url": null,
-      "label": "準備中"
+      "url": "works/nyussion/app/",
+      "label": "使ってみる"
     }
   },
   {

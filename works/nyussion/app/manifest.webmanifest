@@ -1,0 +1,28 @@
+{
+  "name": "Nyussion",
+  "short_name": "Nyussion",
+  "description": "言葉に小さなニュアンスを添えるための5秒ツールです。",
+  "lang": "ja",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fffdf8",
+  "theme_color": "#fffdf8",
+  "categories": ["utilities", "lifestyle"],
+  "icons": [
+    {
+      "src": "images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

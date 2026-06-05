@@ -10,7 +10,7 @@
   "theme_color": "#0d1412",
   "icons": [
     {
-      "src": "assets/stopper-signal.svg",
+      "src": "images/stopper-signal.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"

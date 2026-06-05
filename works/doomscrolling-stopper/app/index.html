@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="反芻やdoomscrollingをいったん区切るための、AI用プロンプト生成・整理保存ツールです。">
+  <meta name="theme-color" content="#0d1412">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="反芻ストッパー">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta property="og:title" content="反芻ストッパー">
+  <meta property="og:description" content="頭から離れないことを、いったん書き出して整理するための小さなWebアプリ。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://himecat.com/works/doomscrolling-stopper/app/">
+  <meta property="og:image" content="https://himecat.com/images/ogp/site.png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>反芻ストッパー | Doomscrolling Stopper</title>
+  <link rel="canonical" href="https://himecat.com/works/doomscrolling-stopper/app/">
+  <link rel="icon" href="assets/stopper-signal.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/stopper-signal.svg">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="site-header">
+      <button class="brand" type="button" data-view="compose" aria-label="整理する画面へ">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="assets/stopper-signal.svg" alt="">
+        </span>
+        <span>
+          <span class="brand-name">反芻ストッパー</span>
+          <span class="brand-note">Doomscrolling Stopper</span>
+        </span>
+      </button>
+      <div class="header-actions" id="headerActions" aria-label="画面移動"></div>
+    </header>
+
+    <main>
+      <section class="view view-active compose-view" id="composeView" aria-labelledby="composeTitle">
+        <div class="intro-band">
+          <p class="eyebrow">探索ループを一旦止める</p>
+          <h1 id="composeTitle">頭から離れないことを、いったん書き出してみましょう</h1>
+          <p class="lead">うまく整理しなくて大丈夫です。<br>今あるままを、AIに渡しやすい形へ整えます。</p>
+        </div>
+
+        <form class="work-panel" id="inputForm">
+          <label class="field-label" for="moyamoyaInput">今、頭の中で回っていること</label>
+          <textarea id="moyamoyaInput" class="text-input main-input" placeholder="・AIで未来がどうなるか&#10;・将来生きていけるか不安&#10;・ずっと検索してしまう"></textarea>
+          <div class="action-row">
+            <button class="primary-button" type="submit">プロンプトを作る</button>
+            <button class="quiet-button" type="button" id="clearInputButton">入力を空にする</button>
+            <p class="next-step-hint hidden" id="nextStepHint">↓ ChatGPTへ渡してみましょう</p>
+          </div>
+        </form>
+
+        <section class="guide-grid" id="guideGrid" aria-label="使い方とヒント">
+          <div class="guide-panel">
+            <p class="guide-kicker">使い方</p>
+            <ol>
+              <li>箇条書きで書く</li>
+              <li>プロンプトをコピーする</li>
+              <li>ChatGPTに貼る</li>
+              <li>返答を戻して保存する</li>
+            </ol>
+          </div>
+          <div class="guide-panel">
+            <p class="guide-kicker">ヒント</p>
+            <ul>
+              <li>同じことを何度も書いても大丈夫</li>
+              <li>事実と不安が混ざったままでいい</li>
+              <li>答えを出すより、一旦ここまでの考えを書く</li>
+            </ul>
+          </div>
+        </section>
+
+        <details class="guide-disclosure hidden" id="guideDisclosure">
+          <summary>使い方とヒント</summary>
+          <section class="guide-grid" aria-label="使い方とヒント">
+            <div class="guide-panel">
+              <p class="guide-kicker">使い方</p>
+              <ol>
+                <li>箇条書きで書く</li>
+                <li>プロンプトをコピーする</li>
+                <li>ChatGPTに貼る</li>
+                <li>返答を戻して保存する</li>
+              </ol>
+            </div>
+            <div class="guide-panel">
+              <p class="guide-kicker">ヒント</p>
+              <ul>
+                <li>同じことを何度も書いても大丈夫</li>
+                <li>事実と不安が混ざったままでいい</li>
+                <li>答えを出すより、一旦ここまでの考えを書く</li>
+              </ul>
+            </div>
+          </section>
+        </details>
+
+        <section class="work-panel hidden" id="promptPanel" aria-labelledby="promptTitle">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">ChatGPTなどへ貼る</p>
+              <h2 id="promptTitle">この文章をコピーしてAIに整理してもらいましょう</h2>
+            </div>
+            <div class="panel-actions">
+              <button class="small-button action-emphasis" type="button" id="copyPromptButton">コピー</button>
+              <a class="small-button link-button mobile-copy-next" id="openChatGptLink" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPTを開く</a>
+            </div>
+          </div>
+          <textarea id="promptOutput" class="text-input prompt-output" readonly></textarea>
+        </section>
+
+        <section class="work-panel hidden" id="resultPanel" aria-labelledby="resultTitle">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">AIの返答を戻す</p>
+              <h2 id="resultTitle">AIの返事をここに貼り付けて、整理してみましょう</h2>
+            </div>
+          </div>
+          <textarea id="aiResultInput" class="text-input result-input" placeholder="🧭 テーマ:&#10;📌 今わかっていること:&#10;🌀 自分が推測していること:&#10;❔ まだ決まっていないこと:&#10;🧱 今ここで結論を出さなくていいこと:&#10;🪜 今の段階で出来ること:"></textarea>
+          <p class="helper-text">貼り付けたら、次の画面で整理を確認できます。</p>
+          <div class="action-row">
+            <button class="primary-button" type="button" id="saveResultButton">整理を確認して保存する</button>
+          </div>
+        </section>
+
+      </section>
+
+      <section class="view review-view" id="reviewView" aria-labelledby="reviewTitle">
+        <div class="review-header">
+          <div>
+            <p class="eyebrow">前回の整理を足場にする</p>
+            <h1 id="reviewTitle">見返す</h1>
+          </div>
+          <p class="save-count" id="saveCount">保存 0 / 15</p>
+        </div>
+        <div class="entries-list" id="entriesList"></div>
+        <p class="empty-state hidden" id="emptyState">まだ保存された整理はありません。頭から離れないことを箇条書きで書くところから始められます。</p>
+      </section>
+
+      <section class="view detail-view" id="detailView" aria-labelledby="detailTitle">
+        <div class="detail-hero" id="detailHero"></div>
+        <article class="detail-layout" id="detailContent"></article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 反芻ストッパー <a href="https://x.com/_himecat" target="_blank" rel="noopener noreferrer">by himecat</a></p>
+    </footer>
+  </div>
+</body>
+</html>

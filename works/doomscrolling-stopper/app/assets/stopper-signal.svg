@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="反芻ストッパー">
+  <rect width="96" height="96" rx="24" fill="#101816"/>
+  <circle cx="48" cy="48" r="28" fill="none" stroke="#6fffd2" stroke-width="4" opacity=".9"/>
+  <path d="M33 48h30" fill="none" stroke="#d8eee8" stroke-width="6" stroke-linecap="round"/>
+  <path d="M61 32c8 6 12 16 9 26" fill="none" stroke="#b8ff6a" stroke-width="4" stroke-linecap="round"/>
+  <path d="M35 64c-8-6-12-16-9-26" fill="none" stroke="#40d7ff" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="48" cy="48" r="38" fill="none" stroke="#27443d" stroke-width="2"/>
+</svg>

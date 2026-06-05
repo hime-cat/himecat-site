@@ -65,10 +65,10 @@
     "thumbnailPath": "images/works/doomscrolling-stopper.webp",
     "thumbnailAlt": "机に向かう猫耳の女の子を描いた反芻ストッパーのイメージ画像",
     "launch": {
-      "type": "pending",
+      "type": "internal",
       "service": null,
-      "url": null,
-      "label": "準備中"
+      "url": "works/doomscrolling-stopper/app/",
+      "label": "使ってみる"
     }
   },
   {

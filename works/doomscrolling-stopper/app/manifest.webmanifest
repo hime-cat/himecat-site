@@ -1,0 +1,19 @@
+{
+  "name": "反芻ストッパー / Doomscrolling Stopper",
+  "short_name": "反芻ストッパー",
+  "description": "頭から離れないことを、いったん書き出して整理するための小さなWebアプリ。",
+  "lang": "ja",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#0d1412",
+  "theme_color": "#0d1412",
+  "icons": [
+    {
+      "src": "assets/stopper-signal.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

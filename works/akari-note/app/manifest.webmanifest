@@ -1,0 +1,23 @@
+{
+  "name": "灯り帖",
+  "short_name": "灯り帖",
+  "description": "よかったことを灯りとして残す、あとで見返すしあわせ日記です。",
+  "lang": "ja",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#17243a",
+  "theme_color": "#17243a",
+  "icons": [
+    {
+      "src": "images/pwa-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/pwa-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

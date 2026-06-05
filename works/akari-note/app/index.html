@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>灯り帖</title>
+    <meta
+      name="description"
+      content="よかったことを灯りとして残す、あとで見返すしあわせ日記です。"
+    />
+    <meta property="og:title" content="灯り帖" />
+    <meta
+      property="og:description"
+      content="よかったことを灯りとして残す、あとで見返すしあわせ日記です。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://himecat.com/works/akari-note/app/" />
+    <meta property="og:site_name" content="灯り帖" />
+    <meta
+      property="og:image"
+      content="https://himecat.com/works/akari-note/app/images/ogp.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://himecat.com/works/akari-note/app/images/ogp.png"
+    />
+    <link rel="canonical" href="https://himecat.com/works/akari-note/app/" />
+    <meta name="theme-color" content="#17243a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="灯り帖" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="images/favicon-256.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-180.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <p class="eyebrow">Akari Note</p>
+        <h1>
+          <button
+            type="button"
+            class="title-button"
+            data-home-tab
+            aria-label="灯すへ戻る"
+          >
+            灯<span class="title-small-kana">り</span>帖
+          </button>
+        </h1>
+        <p class="subtitle">あとで見返す、しあわせ日記</p>
+      </header>
+
+      <nav class="tab-nav" aria-label="灯り帖の画面" data-active-tab="write">
+        <button
+          type="button"
+          class="tab-button is-active"
+          data-tab="write"
+          aria-selected="true"
+        >
+          灯す
+        </button>
+        <button
+          type="button"
+          class="tab-button"
+          data-tab="entries"
+          aria-selected="false"
+        >
+          灯り
+        </button>
+        <button
+          type="button"
+          class="tab-button"
+          data-tab="settings"
+          aria-selected="false"
+        >
+          設定
+        </button>
+      </nav>
+
+      <div class="tab-panels">
+        <section class="tab-panel is-active" data-tab-panel="write">
+          <section class="entry-panel" aria-labelledby="entry-title">
+            <h2 id="entry-title">今の灯り</h2>
+            <form id="entryForm" class="entry-form">
+              <label class="sr-only" for="entryText">よかったこと</label>
+              <textarea
+                id="entryText"
+                rows="4"
+                placeholder="小さな良かったことを記録してみましょう"
+                required
+              ></textarea>
+              <button type="submit">あかりを灯す</button>
+            </form>
+          </section>
+
+          <section class="random-panel" aria-labelledby="random-title">
+            <div>
+              <h2 id="random-title">ふいに見返す</h2>
+              <p>前に記録した灯りを、ひとつ表示します</p>
+            </div>
+            <button id="randomButton" type="button" class="secondary-button">
+              ひとつ思い出す
+            </button>
+            <article
+              id="randomEntry"
+              class="random-entry"
+              aria-live="polite"
+            ></article>
+          </section>
+
+          <section class="list-panel" aria-labelledby="today-title">
+            <h2 id="today-title">今日の灯り</h2>
+            <div id="todayEntries" class="entries-list" aria-live="polite"></div>
+          </section>
+        </section>
+
+        <section class="tab-panel" data-tab-panel="entries" hidden>
+          <section class="list-panel" aria-labelledby="list-title">
+            <h2 id="list-title">灯りの一覧</h2>
+            <div class="list-toolbar">
+              <div
+                class="list-filter"
+                aria-label="灯りの表示切り替え"
+                data-active-filter="all"
+              >
+                <button
+                  type="button"
+                  class="filter-button is-active"
+                  data-entry-filter="all"
+                  aria-pressed="true"
+                >
+                  すべて
+                </button>
+                <button
+                  type="button"
+                  class="filter-button"
+                  data-entry-filter="bookmarked"
+                  aria-pressed="false"
+                >
+                  しおり
+                </button>
+              </div>
+              <div class="search-field">
+                <span class="search-icon" aria-hidden="true"></span>
+                <label class="sr-only" for="entrySearch">灯りを探す</label>
+                <input
+                  id="entrySearch"
+                  type="search"
+                  placeholder="灯りを探す言葉"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+            <p id="entryListHeading" class="entry-list-heading" hidden></p>
+            <div id="entriesList" class="entries-list" aria-live="polite"></div>
+          </section>
+        </section>
+
+        <section class="tab-panel" data-tab-panel="settings" hidden>
+          <section class="settings-panel" aria-labelledby="settings-title">
+            <h2 id="settings-title" class="sr-only">設定</h2>
+            <div class="settings-intro" aria-label="灯り帖について">
+              <p class="settings-intro-title">灯り帖について</p>
+              <p>
+                灯り帖は、日々のよかったことを記録しておく場所です。<br />
+                ここではその記録を「灯り」と呼んでいます。
+              </p>
+              <p>
+                毎日続けなくても、たくさん書かなくても大丈夫。<br />
+                誰かと比べたり昨日より多く残したりする必要もありません。
+              </p>
+              <p>
+                あとで見返したとき、少し嬉しくなれるかもしれません。
+              </p>
+
+              <dl class="settings-guide">
+                <div>
+                  <dt>今の灯り</dt>
+                  <dd>今の小さなよかったことを、ひとつ灯せます。</dd>
+                </div>
+                <div>
+                  <dt>ふいに見返す</dt>
+                  <dd>前に残した灯りが、ひとつだけ現れます。</dd>
+                  <dd>忘れていた灯りに偶然出会うための場所です。</dd>
+                </div>
+                <div>
+                  <dt>今日の灯り</dt>
+                  <dd>今日灯した灯りを見返せます。</dd>
+                  <dd>残しておきたい灯りには栞を挟めます。</dd>
+                </div>
+                <div>
+                  <dt>灯りの一覧</dt>
+                  <dd>これまでの灯りを、新しいものから振り返れます。</dd>
+                  <dd>言葉から前に残した灯りをたどることもできます。</dd>
+                </div>
+              </dl>
+            </div>
+            <div class="settings-item">
+              <span>つくったひと</span>
+              <span class="creator-profile">
+                <span>ひめきゃっと</span>
+                <span class="profile-links">
+                  <a
+                    class="profile-link"
+                    href="https://x.com/_himecat"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="開発者のX"
+                  >
+                    X
+                  </a>
+                  <span class="profile-separator" aria-hidden="true">/</span>
+                  <a
+                    class="profile-link"
+                    href="https://www.instagram.com/hime_c4t"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="開発者のInstagram"
+                  >
+                    Instagram
+                  </a>
+                </span>
+              </span>
+            </div>
+            <section class="settings-section" aria-label="保存と同期">
+              <div class="settings-list">
+                <div class="settings-item settings-item-storage">
+                  <span>保存先</span>
+                  <span class="settings-note">
+                    <span id="storagePlace">このブラウザ</span>
+                    <span id="storageDescription">
+                      灯りはこのブラウザに残ります
+                    </span>
+                  </span>
+                </div>
+                <section
+                  id="authPanel"
+                  class="auth-panel"
+                  aria-labelledby="auth-title"
+                  hidden
+                >
+                  <h3 id="auth-title">別の端末でも見られるようにする</h3>
+                  <p id="authDescription">
+                    メールアドレスに届くコードで認証すると、このブラウザの灯りをクラウドにも残せます。
+                    同じメールアドレスを使えば、別のブラウザや端末でも同じ灯りを見られます。
+                  </p>
+                  <form id="authForm" class="auth-form">
+                    <label class="sr-only" for="authEmail">
+                      メールアドレス
+                    </label>
+                    <input
+                      id="authEmail"
+                      type="email"
+                      autocomplete="email"
+                      placeholder="メールアドレス"
+                      required
+                    />
+                    <button id="authSubmitButton" type="submit">
+                      メールにコードを送る
+                    </button>
+                  </form>
+                  <form id="authCodeForm" class="auth-form" hidden>
+                    <label class="sr-only" for="authCode">届いたコード</label>
+                    <input
+                      id="authCode"
+                      type="text"
+                      inputmode="numeric"
+                      autocomplete="one-time-code"
+                      placeholder="届いたコード"
+                      required
+                    />
+                    <button id="authCodeSubmitButton" type="submit">
+                      コードを確かめる
+                    </button>
+                  </form>
+                  <p
+                    id="authStatus"
+                    class="auth-status"
+                    aria-live="polite"
+                    hidden
+                  ></p>
+                </section>
+              </div>
+            </section>
+            <p class="settings-footer-link">
+              <a href="policy.html">利用と保存について</a>
+            </p>
+          </section>
+        </section>
+      </div>
+
+      <footer class="app-footer">
+        <a
+          href="https://x.com/_himecat"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="開発者のX"
+        >
+          © 2026 灯り帖 by himecat
+        </a>
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

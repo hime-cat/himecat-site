@@ -1,20 +1,20 @@
 [
   {
-    "slug": "akari-memo",
+    "slug": "akari-note",
     "title": "灯り帖",
     "category": "アプリ",
     "summary": "良かったことを、あとで振り返る為のアプリ",
     "description": "慌ただしい日にも、心に残ったことをそっと書き留めるためのアプリです。",
     "tags": ["記録", "振り返り"],
     "featuredOrder": 2,
-    "detailPath": "works/akari-memo/",
-    "thumbnailPath": "images/works/akari-memo.webp",
+    "detailPath": "works/akari-note/",
+    "thumbnailPath": "images/works/akari-note.webp",
     "thumbnailAlt": "灯り帖のタイトルと灯りを描いた紺色のイメージ画像",
     "launch": {
-      "type": "pending",
+      "type": "internal",
       "service": null,
-      "url": null,
-      "label": "準備中"
+      "url": "works/akari-note/app/",
+      "label": "使ってみる"
     }
   },
   {

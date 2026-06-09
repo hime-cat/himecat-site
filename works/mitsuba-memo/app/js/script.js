@@ -723,7 +723,7 @@ function renderNextStep(task) {
   addStepToggleBtn.hidden = !canAddStep;
   addStepToggleBtn.setAttribute("aria-expanded", String(canAddStep && isAddStepOpen));
   addStepToggleBtn.innerHTML = `
-    <span class="accordion-label">🌱 小さな一歩を足す</span>
+    <span class="accordion-label">🌱 続きの一歩も決めておく</span>
     <span class="add-step-toggle-action">
       <span>${isAddStepOpen ? "閉じる" : "見る"}</span>
       <span class="accordion-arrow" aria-hidden="true">${isAddStepOpen ? "▲" : "▼"}</span>

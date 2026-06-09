@@ -1806,7 +1806,7 @@ function renderParking() {
     const compose = document.createElement("div");
     compose.className = "parking-compose-row";
     compose.innerHTML = `
-      <input class="parking-compose-input" type="text" placeholder="例：あとで見る資料 / 返信するメール" maxlength="80">
+      <input class="parking-compose-input" type="text" placeholder="例：晩御飯の用意をする" maxlength="80">
       <button class="parking-compose-btn" type="button">置く</button>
     `;
 

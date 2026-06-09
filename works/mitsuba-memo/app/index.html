@@ -61,14 +61,17 @@
                                 <div class="section-head input-hero">
                                     <div>
                                         <h2>今日は、なにから始める？</h2>
-                                        <p class="card-desc">思いついたことを、3つまで置いてみましょう。</p>
+                                        <p class="card-desc input-hero-desc">
+                                            <span class="input-hero-desc-desktop">思いついたことを、3つまで置いてみましょう。</span>
+                                            <span class="input-hero-desc-mobile">進めたいことを、3つまで書こう</span>
+                                        </p>
                                     </div>
                                     <span class="pill task-count-pill" id="taskCountPill">候補 <span id="taskCount">0</span> / 3</span>
                                 </div>
 
                                 <div class="candidate-work-area input-candidate-area">
                                     <div class="row add-task-row">
-                                        <input id="taskInput" type="text" placeholder="例：部屋を整える / 今日のごはんを考える" maxlength="80" />
+                                        <input id="taskInput" type="text" placeholder="例：お部屋を掃除する" maxlength="80" />
                                         <button class="btn-primary" id="addTaskBtn">追加</button>
                                     </div>
                                     <div class="candidate-full-message" id="candidateFullMessage" hidden>
@@ -130,13 +133,13 @@
                                         <h2>いまやること</h2>
                                         <p class="card-desc">このひとつだけ、ゆっくり進めましょう</p>
                                     </div>
-                                    <button class="current-reselect-btn" id="reselectTaskBtn" type="button"><span class="current-reselect-arrow" aria-hidden="true">←</span><span class="current-reselect-text">別の候補にする</span></button>
                                 </div>
 
                                 <div class="current-box" id="currentBox">
                                     <div class="current-task" id="currentTaskText">まずは今日の候補を1つ入れてみましょう</div>
                                 </div>
                                 <div class="current-actions">
+                                    <button class="current-reselect-btn" id="reselectTaskBtn" type="button"><span class="current-reselect-arrow" aria-hidden="true">←</span><span class="current-reselect-text">別の候補にする</span></button>
                                     <button class="btn-done current-complete-btn" id="completeCurrentTaskBtn" type="button">できた！</button>
                                 </div>
                             </div>

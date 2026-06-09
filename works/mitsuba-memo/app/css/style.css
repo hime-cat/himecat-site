@@ -457,6 +457,10 @@ main {
   font-size: 24px;
 }
 
+.input-hero-desc-mobile {
+  display: none;
+}
+
 .focus-grid {
   grid-template-columns: minmax(0, 1fr);
   max-width: 720px;
@@ -921,6 +925,7 @@ button:disabled {
 }
 
 .current-actions {
+  position: static;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -930,8 +935,11 @@ button:disabled {
 }
 
 .current-reselect-btn {
+  position: absolute;
+  top: 24px;
+  right: 28px;
   flex: 0 0 auto;
-  margin-top: 2px;
+  margin: 0;
   padding: 3px 2px;
   background: transparent;
   border: 0;
@@ -2405,7 +2413,7 @@ button:disabled {
   }
 
   .bulk-step-input.is-first-step-input {
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.45;
   }
 }
@@ -2503,6 +2511,13 @@ button:disabled {
     flex-direction: column;
   }
 
+  .sync-row input {
+    width: 100%;
+    min-height: 44px;
+    flex: 0 0 auto;
+    font-size: 16px;
+  }
+
   .sync-btn {
     width: 100%;
   }
@@ -2514,6 +2529,30 @@ button:disabled {
 
   .section-head {
     flex-direction: column;
+  }
+
+  .section-head.input-hero {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .input-hero > div {
+    min-width: 0;
+  }
+
+  .input-hero .task-count-pill {
+    flex: 0 0 auto;
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  .input-hero-desc-desktop {
+    display: none;
+  }
+
+  .input-hero-desc-mobile {
+    display: inline;
   }
 
   .next-step-head,
@@ -2537,6 +2576,10 @@ button:disabled {
     padding: 0.62rem 1.55rem;
     font-size: 1rem;
     line-height: 1.45rem;
+  }
+
+  .current-reselect-btn {
+    position: static;
   }
 
   #taskList .item {
@@ -2564,8 +2607,12 @@ button:disabled {
     height: 76px;
     min-height: 76px;
     max-height: 76px;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.45;
+  }
+
+  .bulk-step-input.is-first-step-input::placeholder {
+    font-size: 13px;
   }
 
   .helper-actions {
@@ -2598,7 +2645,7 @@ button:disabled {
   .step-edit-input {
     min-height: 40px;
     padding: 8px 9px;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.45;
   }
 

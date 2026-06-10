@@ -712,9 +712,14 @@ function renderNextStep(task) {
   const canAddStep = Boolean(task) && hasSteps && !isAllDone;
 
   stepSectionTitle.textContent = hasSteps ? "一歩ずつ進める" : "最初の一歩を決める";
-  stepSectionDesc.textContent = hasSteps
-    ? "小さく分けたものを、上からひとつずつ進めましょう。"
-    : "\"最初の一歩\"を決めると、\"いまやること\"を始めやすくなります。";
+  if (hasSteps) {
+    stepSectionDesc.innerHTML = `
+      <span class="step-section-desc-desktop">小さく分けたものを、上からひとつずつ進めましょう</span>
+      <span class="step-section-desc-mobile">小さく分けたものを、上から1個ずつ進めよう</span>
+    `;
+  } else {
+    stepSectionDesc.textContent = "\"最初の一歩\"を決めると、\"いまやること\"を始めやすくなります。";
+  }
   nextStepCount.textContent = hasSteps ? `${doneCount}/${steps.length}歩できました` : DEFAULT_NEXT_STEP_COUNT_TEXT;
   nextStepCount.hidden = !task;
   nextStepCount.classList.toggle("is-done", doneCount > 0);

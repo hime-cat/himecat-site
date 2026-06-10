@@ -461,6 +461,10 @@ main {
   display: none;
 }
 
+.step-section-desc-mobile {
+  display: none;
+}
+
 .focus-grid {
   grid-template-columns: minmax(0, 1fr);
   max-width: 720px;
@@ -1874,12 +1878,15 @@ button:disabled {
 
 .add-step-toggle-action {
   display: inline-flex;
+  flex: 0 0 48px;
   align-items: center;
+  justify-content: flex-end;
   gap: 3px;
   color: var(--muted);
   font-family: "Yomogi", "Zen Kaku Gothic New", "Noto Sans JP", "BIZ UDPGothic", "Yu Gothic UI", "Hiragino Sans", "Meiryo", sans-serif;
   font-size: 12px;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .add-step-toggle-action .accordion-arrow {
@@ -2419,6 +2426,12 @@ button:disabled {
 }
 
 @media (max-width: 440px) {
+  html,
+  body {
+    overflow-x: hidden;
+    overflow-x: clip;
+  }
+
   .container {
     width: min(100% - 16px, 1040px);
     padding-top: 10px;
@@ -2470,6 +2483,23 @@ button:disabled {
 
   .parking-card .parking-toggle {
     padding-inline: 8px;
+  }
+
+  .parking-toggle-main {
+    gap: 5px;
+  }
+
+  .parking-card .accordion-label {
+    font-size: 15px;
+  }
+
+  .parking-card .parking-count {
+    margin-left: 2px;
+  }
+
+  .add-step-toggle .accordion-label,
+  .ai-helper-toggle .accordion-label {
+    font-size: 15px;
   }
 
   .parking-card .parking-list {
@@ -2537,13 +2567,18 @@ button:disabled {
     gap: 8px;
   }
 
+  .input-hero h2 {
+    font-size: 20px;
+  }
+
   .input-hero > div {
     min-width: 0;
   }
 
   .input-hero .task-count-pill {
     flex: 0 0 auto;
-    padding: 5px 8px;
+    gap: 3px;
+    padding: 4px 6px;
     font-size: 11px;
   }
 
@@ -2552,6 +2587,14 @@ button:disabled {
   }
 
   .input-hero-desc-mobile {
+    display: inline;
+  }
+
+  .step-section-desc-desktop {
+    display: none;
+  }
+
+  .step-section-desc-mobile {
     display: inline;
   }
 

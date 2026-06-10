@@ -1,4 +1,4 @@
-const CACHE_NAME = "mitsuba-memo-v18";
+const CACHE_NAME = "mitsuba-memo-v28";
 
 const APP_SHELL = [
   "./",

@@ -712,9 +712,14 @@ function renderNextStep(task) {
   const canAddStep = Boolean(task) && hasSteps && !isAllDone;
 
   stepSectionTitle.textContent = hasSteps ? "一歩ずつ進める" : "最初の一歩を決める";
-  stepSectionDesc.textContent = hasSteps
-    ? "小さく分けたものを、上からひとつずつ進めましょう。"
-    : "\"最初の一歩\"を決めると、\"いまやること\"を始めやすくなります。";
+  if (hasSteps) {
+    stepSectionDesc.innerHTML = `
+      <span class="step-section-desc-desktop">小さく分けたものを、上からひとつずつ進めましょう</span>
+      <span class="step-section-desc-mobile">小さく分けたものを、上から1個ずつ進めよう</span>
+    `;
+  } else {
+    stepSectionDesc.textContent = "\"最初の一歩\"を決めると、\"いまやること\"を始めやすくなります。";
+  }
   nextStepCount.textContent = hasSteps ? `${doneCount}/${steps.length}歩できました` : DEFAULT_NEXT_STEP_COUNT_TEXT;
   nextStepCount.hidden = !task;
   nextStepCount.classList.toggle("is-done", doneCount > 0);
@@ -723,7 +728,7 @@ function renderNextStep(task) {
   addStepToggleBtn.hidden = !canAddStep;
   addStepToggleBtn.setAttribute("aria-expanded", String(canAddStep && isAddStepOpen));
   addStepToggleBtn.innerHTML = `
-    <span class="accordion-label">🌱 小さな一歩を足す</span>
+    <span class="accordion-label">🌱 続きの一歩も決めておく</span>
     <span class="add-step-toggle-action">
       <span>${isAddStepOpen ? "閉じる" : "見る"}</span>
       <span class="accordion-arrow" aria-hidden="true">${isAddStepOpen ? "▲" : "▼"}</span>
@@ -1806,7 +1811,7 @@ function renderParking() {
     const compose = document.createElement("div");
     compose.className = "parking-compose-row";
     compose.innerHTML = `
-      <input class="parking-compose-input" type="text" placeholder="例：あとで見る資料 / 返信するメール" maxlength="80">
+      <input class="parking-compose-input" type="text" placeholder="例：晩御飯の用意をする" maxlength="80">
       <button class="parking-compose-btn" type="button">置く</button>
     `;
 

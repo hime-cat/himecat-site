@@ -10,14 +10,15 @@
     <meta property="og:site_name" content="みつばメモ" />
     <meta property="og:title" content="みつばメモ｜3つ選んで、ひとつだけ。" />
     <meta property="og:description" content="今見るものを3つまでにしぼって、ひとつずつ進むための小さなタスク補助メモです。" />
-    <meta property="og:url" content="https://hime-cat.github.io/mitsuba-memo/" />
-    <meta property="og:image" content="https://hime-cat.github.io/mitsuba-memo/images/ogp.png" />
+    <meta property="og:url" content="https://himecat.com/works/mitsuba-memo/app/" />
+    <meta property="og:image" content="https://himecat.com/works/mitsuba-memo/app/images/ogp.png?v=2" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="みつばメモ｜3つ選んで、ひとつだけ。" />
     <meta name="twitter:description" content="今見るものを3つまでにしぼって、ひとつずつ進むための小さなタスク補助メモです。" />
-    <meta name="twitter:image" content="https://hime-cat.github.io/mitsuba-memo/images/ogp.png" />
+    <meta name="twitter:image" content="https://himecat.com/works/mitsuba-memo/app/images/ogp.png?v=2" />
+    <link rel="canonical" href="https://himecat.com/works/mitsuba-memo/app/" />
     <meta name="theme-color" content="#6f9d63" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -60,14 +61,17 @@
                                 <div class="section-head input-hero">
                                     <div>
                                         <h2>今日は、なにから始める？</h2>
-                                        <p class="card-desc">思いついたことを、3つまで置いてみましょう。</p>
+                                        <p class="card-desc input-hero-desc">
+                                            <span class="input-hero-desc-desktop">思いついたことを、3つまで置いてみましょう。</span>
+                                            <span class="input-hero-desc-mobile">進めたいことを、3つまで書こう</span>
+                                        </p>
                                     </div>
                                     <span class="pill task-count-pill" id="taskCountPill">候補 <span id="taskCount">0</span> / 3</span>
                                 </div>
 
                                 <div class="candidate-work-area input-candidate-area">
                                     <div class="row add-task-row">
-                                        <input id="taskInput" type="text" placeholder="例：部屋を整える / 今日のごはんを考える" maxlength="80" />
+                                        <input id="taskInput" type="text" placeholder="例：お部屋を掃除する" maxlength="80" />
                                         <button class="btn-primary" id="addTaskBtn">追加</button>
                                     </div>
                                     <div class="candidate-full-message" id="candidateFullMessage" hidden>
@@ -129,13 +133,13 @@
                                         <h2>いまやること</h2>
                                         <p class="card-desc">このひとつだけ、ゆっくり進めましょう</p>
                                     </div>
-                                    <button class="current-reselect-btn" id="reselectTaskBtn" type="button"><span class="current-reselect-arrow" aria-hidden="true">←</span><span class="current-reselect-text">別の候補にする</span></button>
                                 </div>
 
                                 <div class="current-box" id="currentBox">
                                     <div class="current-task" id="currentTaskText">まずは今日の候補を1つ入れてみましょう</div>
                                 </div>
                                 <div class="current-actions">
+                                    <button class="current-reselect-btn" id="reselectTaskBtn" type="button"><span class="current-reselect-arrow" aria-hidden="true">←</span><span class="current-reselect-text">別の候補にする</span></button>
                                     <button class="btn-done current-complete-btn" id="completeCurrentTaskBtn" type="button">できた！</button>
                                 </div>
                             </div>
@@ -157,7 +161,7 @@
                                     </div>
 
                                     <button class="add-step-toggle" id="addStepToggleBtn" type="button" aria-expanded="false" aria-controls="stepHelperPanel" hidden>
-                                        <span class="accordion-label">🌱 小さな一歩を足す</span>
+                                        <span class="accordion-label">🌱 続きの一歩も決めておく</span>
                                         <span class="add-step-toggle-action">
                                             <span>見る</span>
                                             <span class="accordion-arrow" aria-hidden="true">▼</span>
